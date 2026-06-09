@@ -268,13 +268,13 @@ export default function FeaturesShowcase() {
     <section className="relative py-24 px-6 bg-white overflow-hidden" id="features">
       {/* dot grid */}
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(circle, #213F7D10 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(circle, #213F7D30 1.5px, transparent 1.5px)',
         backgroundSize: '28px 28px',
       }} />
       {/* blue glow — top left */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full pointer-events-none" style={{
-        background: 'radial-gradient(circle, #213F7D14 0%, transparent 65%)',
-        filter: 'blur(48px)',
+      <div className="absolute -top-16 -left-16 w-[500px] h-[500px] rounded-full pointer-events-none" style={{
+        background: 'radial-gradient(circle, #213F7D26 0%, transparent 60%)',
+        filter: 'blur(32px)',
       }} />
       <div className="max-w-6xl mx-auto relative">
         <div className="mb-14">

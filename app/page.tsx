@@ -73,18 +73,18 @@ export default function Home() {
       <section className="relative py-24 sm:py-32 px-6 border-b border-gray-100 overflow-hidden">
         {/* dot grid */}
         <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: `radial-gradient(circle, #213F7D14 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, #213F7D30 1.5px, transparent 1.5px)`,
           backgroundSize: '28px 28px',
         }} />
         {/* blue glow — top right */}
-        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none" style={{
-          background: `radial-gradient(circle, #213F7D1A 0%, transparent 65%)`,
-          filter: 'blur(48px)',
+        <div className="absolute -top-20 -right-20 w-[600px] h-[600px] rounded-full pointer-events-none" style={{
+          background: `radial-gradient(circle, #213F7D26 0%, transparent 60%)`,
+          filter: 'blur(32px)',
         }} />
         {/* green glow — bottom left */}
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none" style={{
-          background: `radial-gradient(circle, #96C62418 0%, transparent 65%)`,
-          filter: 'blur(48px)',
+        <div className="absolute -bottom-16 -left-16 w-96 h-96 rounded-full pointer-events-none" style={{
+          background: `radial-gradient(circle, #96C62430 0%, transparent 60%)`,
+          filter: 'blur(32px)',
         }} />
         <div className="max-w-6xl mx-auto relative">
           <div className="max-w-3xl">
