@@ -202,8 +202,8 @@ export default function Home() {
               <p className="text-sm text-gray-400 mt-5">No sign-up needed for the demo · Your store live within 24 hours</p>
             </div>
 
-            {/* right: mockup — desktop only */}
-            <div className="hidden lg:block">
+            {/* right: mockup */}
+            <div className="w-full">
               <HeroMockup />
             </div>
 
