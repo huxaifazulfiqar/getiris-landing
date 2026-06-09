@@ -50,23 +50,25 @@ const OrderBoardMockup = () => {
     { label: 'Delivered', color: 'bg-blue-50', dot: 'bg-blue-400', orders: ['A0837 · Omar', 'A0838 · Zara'] },
   ]
   return (
-    <div className="w-full overflow-x-auto">
-      <div className="flex gap-3 min-w-max">
-        {columns.map((col) => (
-          <div key={col.label} className={`${col.color} rounded-xl p-3 w-36`}>
-            <div className="flex items-center gap-1.5 mb-3">
-              <span className={`w-2 h-2 rounded-full ${col.dot}`} />
-              <span className="text-xs font-bold text-gray-600">{col.label}</span>
+    <div className="w-full max-w-full overflow-hidden">
+      <div className="overflow-x-auto pb-2">
+        <div className="flex gap-2" style={{ minWidth: 'max-content' }}>
+          {columns.map((col) => (
+            <div key={col.label} className={`${col.color} rounded-xl p-3`} style={{ width: '130px' }}>
+              <div className="flex items-center gap-1.5 mb-3">
+                <span className={`w-2 h-2 rounded-full shrink-0 ${col.dot}`} />
+                <span className="text-xs font-bold text-gray-600 truncate">{col.label}</span>
+              </div>
+              <div className="space-y-2">
+                {col.orders.map((o) => (
+                  <div key={o} className="bg-white rounded-lg px-2 py-2 text-xs font-semibold text-gray-700 shadow-sm border border-gray-100 truncate">
+                    {o}
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="space-y-2">
-              {col.orders.map((o) => (
-                <div key={o} className="bg-white rounded-lg px-2.5 py-2 text-xs font-semibold text-gray-700 shadow-sm border border-gray-100">
-                  {o}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )
