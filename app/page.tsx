@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import FeaturesShowcase from './components/FeaturesShowcase'
 import ProblemSection from './components/ProblemSection'
+import FounderSection from './components/FounderSection'
 
 const WA_LINK = "https://wa.me/923330209272?text=Hi%2C%20I%27m%20interested%20in%20Iris%20POS%20for%20my%20optical%20store."
 const DEMO_LINK = "https://demo.getiris.tech"
@@ -115,6 +116,9 @@ export default function Home() {
 
       {/* PROBLEM + SOLUTION */}
       <ProblemSection />
+
+      {/* FOUNDER */}
+      <FounderSection />
 
       {/* FEATURES */}
       <FeaturesShowcase />
