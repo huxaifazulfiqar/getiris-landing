@@ -211,21 +211,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS STRIP */}
-      <div className="border-b border-gray-100 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 py-5 grid grid-cols-3 divide-x divide-gray-200">
-          {[
-            { val: 'Orders → Delivered', label: 'Full order lifecycle tracked' },
-            { val: 'Pakistan-first', label: 'Rs. currency · 80mm thermal receipts' },
-            { val: 'Live in 24 hours', label: 'We set everything up for you' },
-          ].map(s => (
-            <div key={s.val} className="px-6 first:pl-0 last:pr-0">
-              <p className="font-extrabold text-sm text-gray-900">{s.val}</p>
-              <p className="text-xs text-gray-400 mt-0.5">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* PROBLEM + SOLUTION */}
       <ProblemSection />
