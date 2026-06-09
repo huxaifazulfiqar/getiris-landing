@@ -45,6 +45,9 @@ export default function Home() {
   return (
     <main className="bg-white text-gray-900">
 
+      {/* top accent line */}
+      <div className="h-1 w-full" style={{ background: `linear-gradient(to right, ${BLUE}, ${GREEN})` }} />
+
       {/* NAV */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -67,8 +70,23 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="py-24 sm:py-32 px-6 border-b border-gray-100">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-24 sm:py-32 px-6 border-b border-gray-100 overflow-hidden">
+        {/* dot grid */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: `radial-gradient(circle, #213F7D14 1px, transparent 1px)`,
+          backgroundSize: '28px 28px',
+        }} />
+        {/* blue glow — top right */}
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none" style={{
+          background: `radial-gradient(circle, #213F7D1A 0%, transparent 65%)`,
+          filter: 'blur(48px)',
+        }} />
+        {/* green glow — bottom left */}
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full pointer-events-none" style={{
+          background: `radial-gradient(circle, #96C62418 0%, transparent 65%)`,
+          filter: 'blur(48px)',
+        }} />
+        <div className="max-w-6xl mx-auto relative">
           <div className="max-w-3xl">
             <div
               className="inline-flex items-center gap-2 text-xs font-bold px-3 py-1.5 rounded-full mb-8 border"

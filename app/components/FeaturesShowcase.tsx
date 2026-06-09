@@ -265,8 +265,18 @@ export default function FeaturesShowcase() {
   const [active, setActive] = useState(0)
 
   return (
-    <section className="py-24 px-6 bg-white" id="features">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-24 px-6 bg-white overflow-hidden" id="features">
+      {/* dot grid */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        backgroundImage: 'radial-gradient(circle, #213F7D10 1px, transparent 1px)',
+        backgroundSize: '28px 28px',
+      }} />
+      {/* blue glow — top left */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full pointer-events-none" style={{
+        background: 'radial-gradient(circle, #213F7D14 0%, transparent 65%)',
+        filter: 'blur(48px)',
+      }} />
+      <div className="max-w-6xl mx-auto relative">
         <div className="mb-14">
           <p className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: GREEN }}>Features</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
