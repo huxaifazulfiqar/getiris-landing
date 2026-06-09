@@ -279,9 +279,9 @@ export default function FeaturesShowcase() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Feature list */}
-          <div className="space-y-2">
+          <div className="space-y-2 lg:order-1 order-2">
             {features.map((f, i) => (
               <button
                 key={f.id}
@@ -309,7 +309,7 @@ export default function FeaturesShowcase() {
           </div>
 
           {/* Visual mockup */}
-          <div className="lg:sticky lg:top-24">
+          <div className="lg:sticky lg:top-24 lg:order-2 order-1">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -317,7 +317,7 @@ export default function FeaturesShowcase() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.25 }}
-                className="bg-gray-50 rounded-3xl p-8 flex items-center justify-center min-h-80"
+                className="bg-gray-50 rounded-2xl p-4 sm:p-8 flex items-center justify-center"
               >
                 {features[active].mockup}
               </motion.div>
