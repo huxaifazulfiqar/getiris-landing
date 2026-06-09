@@ -43,117 +43,69 @@ const plans = [
 
 function HeroMockup() {
   return (
-    <div className="relative">
-      {/* glow behind mockup */}
-      <div className="absolute -inset-8 rounded-full pointer-events-none" style={{
-        background: `radial-gradient(circle, #213F7D20 0%, transparent 65%)`,
-        filter: 'blur(20px)',
-      }} />
+    <div className="relative flex items-end justify-center" style={{ height: '480px' }}>
 
-      {/* browser frame */}
-      <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80" style={{ rotate: '1deg' }}>
+      {/* desktop browser frame */}
+      <div className="absolute left-0 bottom-0 w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-200/80" style={{ maxWidth: '88%' }}>
         {/* chrome bar */}
-        <div className="bg-gray-900 px-4 py-3 flex items-center gap-3">
-          <div className="flex gap-1.5">
+        <div className="bg-gray-900 px-3 py-2.5 flex items-center gap-2.5">
+          <div className="flex gap-1.5 shrink-0">
             <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
           </div>
-          <div className="flex-1 bg-gray-800 rounded px-3 py-1 text-xs text-gray-400 text-center font-mono">
-            your-store.getiris.tech
+          <div className="flex-1 bg-gray-800 rounded px-3 py-0.5 text-xs text-gray-400 text-center font-mono truncate">
+            demo.getiris.tech/pos
           </div>
         </div>
+        <Image
+          src="/screenshot-desktop.png"
+          alt="Iris POS — point of sale screen"
+          width={1400}
+          height={880}
+          className="w-full object-cover object-top"
+          style={{ maxHeight: '340px' }}
+          priority
+        />
+      </div>
 
-        {/* app UI */}
-        <div className="flex overflow-hidden bg-gray-50" style={{ height: '340px' }}>
-          {/* sidebar */}
-          <div className="w-14 shrink-0 flex flex-col items-center py-4 gap-1" style={{ backgroundColor: BLUE }}>
-            <div className="w-7 h-7 bg-white/25 rounded-lg mb-3" />
-            <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center mb-0.5">
-              <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-white">
-                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
-              </svg>
-            </div>
-            {[
-              <svg key="b" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4"><path d="M2 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V4zm6 0a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1H9a1 1 0 01-1-1V4zm6 0a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" /></svg>,
-              <svg key="u" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" /></svg>,
-              <svg key="c" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" /></svg>,
-            ].map((icon, i) => (
-              <div key={i} className="w-9 h-9 rounded-xl flex items-center justify-center text-white/40">{icon}</div>
-            ))}
-          </div>
-
-          {/* main content */}
-          <div className="flex-1 p-3 overflow-hidden">
-            <div className="flex items-center justify-between mb-3">
-              <p className="font-bold text-sm text-gray-800">Order Board</p>
-              <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">9 Jun 2026</span>
-            </div>
-
-            {/* stats */}
-            <div className="grid grid-cols-3 gap-2 mb-3">
-              {[
-                { label: 'Today', val: 'Rs. 24,500', c: BLUE },
-                { label: 'Active', val: '12 orders', c: '#374151' },
-                { label: 'Ready', val: '3 orders', c: GREEN },
-              ].map(s => (
-                <div key={s.label} className="bg-white rounded-xl p-2.5 shadow-sm border border-gray-100">
-                  <p className="text-gray-400 text-xs mb-0.5">{s.label}</p>
-                  <p className="font-black text-xs leading-tight" style={{ color: s.c }}>{s.val}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* kanban */}
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { status: 'Pending', bg: 'bg-gray-100', dot: 'bg-gray-400', orders: ['A0847 · Ali R.', 'A0848 · Sara M.'] },
-                { status: 'Lens Ordered', bg: 'bg-yellow-50', dot: 'bg-yellow-400', orders: ['A0845 · Bilal K.'] },
-                { status: 'Ready', bg: 'bg-green-50', dot: 'bg-green-400', orders: ['A0842 · Omar', 'A0843 · Zara'] },
-              ].map(col => (
-                <div key={col.status} className={`${col.bg} rounded-xl p-2`}>
-                  <div className="flex items-center gap-1 mb-2">
-                    <span className={`w-1.5 h-1.5 rounded-full ${col.dot}`} />
-                    <p className="text-xs font-bold text-gray-500 truncate">{col.status}</p>
-                  </div>
-                  {col.orders.map(o => (
-                    <div key={o} className="bg-white rounded-lg px-2 py-1.5 text-xs text-gray-700 font-medium mb-1 truncate shadow-sm border border-gray-100">{o}</div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* phone frame — overlaps desktop, bottom-right */}
+      <div className="absolute right-0 bottom-0 z-10 rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-gray-800" style={{ width: '38%', maxWidth: '160px' }}>
+        {/* notch */}
+        <div className="bg-gray-900 h-5 flex items-center justify-center">
+          <div className="w-12 h-1.5 bg-gray-700 rounded-full" />
         </div>
+        <Image
+          src="/screenshot-mobile.png"
+          alt="Iris POS — mobile analytics"
+          width={390}
+          height={844}
+          className="w-full object-cover object-top"
+          style={{ maxHeight: '280px' }}
+          priority
+        />
+      </div>
+
+      {/* floating badge — revenue */}
+      <div className="absolute -left-4 top-8 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2.5 z-20">
+        <p className="text-xs text-gray-400 mb-0.5">Total Revenue</p>
+        <p className="text-base font-black text-gray-900 leading-tight">Rs. 1,20,600</p>
+        <p className="text-xs font-semibold text-green-600">↑ 39% vs last month</p>
       </div>
 
       {/* floating badge — order ready */}
-      <div className="absolute -left-12 top-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2.5 flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-          <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-green-600">
+      <div className="absolute right-4 top-6 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2.5 flex items-center gap-2 z-20">
+        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+          <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5 text-green-600">
             <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
           </svg>
         </div>
         <div>
           <p className="text-xs font-bold text-gray-800 whitespace-nowrap">Order Ready</p>
-          <p className="text-xs text-gray-400">A0842 · Omar</p>
+          <p className="text-xs text-gray-400 whitespace-nowrap">A0842 · Omar</p>
         </div>
       </div>
 
-      {/* floating badge — revenue */}
-      <div className="absolute -right-10 top-4 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2.5">
-        <p className="text-xs text-gray-400 mb-0.5">This month</p>
-        <p className="text-base font-black text-gray-900 leading-tight">Rs. 4,64,000</p>
-        <p className="text-xs font-semibold text-green-600">↑ 18% vs last month</p>
-      </div>
-
-      {/* floating badge — AI */}
-      <div className="absolute -right-6 bottom-10 bg-white rounded-2xl shadow-xl border border-gray-100 px-3 py-2.5 flex items-center gap-2">
-        <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs shrink-0" style={{ backgroundColor: BLUE }}>✦</div>
-        <div>
-          <p className="text-xs font-bold text-gray-800 whitespace-nowrap">Iris AI</p>
-          <p className="text-xs text-gray-400 whitespace-nowrap">Ask anything</p>
-        </div>
-      </div>
     </div>
   )
 }
