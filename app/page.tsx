@@ -3,7 +3,7 @@ import FeaturesShowcase from './components/FeaturesShowcase'
 import ProblemSection from './components/ProblemSection'
 
 const WA_LINK = "https://wa.me/923330209272?text=Hi%2C%20I%27m%20interested%20in%20Iris%20POS%20for%20my%20optical%20store."
-const DEMO_LINK = "https://demo.irispos.com"
+const DEMO_LINK = "https://demo.getiris.tech"
 const BLUE = '#213F7D'
 const GREEN = '#96C624'
 
