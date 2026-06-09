@@ -78,7 +78,7 @@ export default function Home() {
               Built for optical stores in Pakistan
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6 text-gray-900">
-              Your optical store.<br />
+              Your optical store<br />
               <span style={{ color: BLUE }}>Finally organised.</span>
             </h1>
             <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-2xl">
