@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const redHatDisplay = Red_Hat_Display({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800", "900"] });
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${redHatDisplay.className} min-h-full`}>{children}</body>
+      <body className={`${redHatDisplay.className} min-h-full`}>{children}<Analytics /></body>
     </html>
   );
 }
